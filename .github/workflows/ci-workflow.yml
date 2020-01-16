@@ -21,3 +21,5 @@ jobs:
 
     - name: Test app
       run: build/go-test.sh
+      uses: docker://amazon/dynamodb-local
+
