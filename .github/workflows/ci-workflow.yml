@@ -20,7 +20,7 @@ jobs:
       run: build/go-lint.sh
 
     - name: Run dynamo locally
-      uses: docker://amazon/dynamodb-local
+      uses: docker://amazon/dynamodb-local:latest
 
     - name: Test app
       run: build/go-test.sh
