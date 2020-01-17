@@ -23,7 +23,7 @@ const (
 
 func withDAO(t *testing.T, do func(ctx context.Context, dao *HappinessRatingEventDAO)) {
 	s := session.Must(session.NewSession(aws.NewConfig().
-		WithCredentials(credentials.NewStaticCredentials("","","")).
+		WithCredentials(credentials.NewStaticCredentials("id","secret","token")).
 		WithRegion("us-west-2").
 		WithEndpoint("http://localhost:8000")))
 	db := dynamo.New(s)
