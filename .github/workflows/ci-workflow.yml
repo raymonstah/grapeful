@@ -19,9 +19,9 @@ jobs:
     - name: Lint project
       run: build/go-lint.sh
 
-    - name: Run dynamo locally
-      uses: docker://amazon/dynamodb-local:latest
-
     - name: Test app
       run: build/go-test.sh
 
+    services:
+      dynamodb:
+        image: amazon/dynamodb-local:latest
