@@ -44,7 +44,7 @@ func (d *HappinessRatingEventDAO) Rate(ctx context.Context, rating happinessrati
 		Notes:  rating.Notes,
 	}
 	if err := d.table.Put(event).RunWithContext(ctx); err != nil {
-		return fmt.Errorf("error putting new happiness event %v: %w", event, err)
+		return fmt.Errorf("error putting new happiness event %+v: %w", event, err)
 	}
 
 	return nil
@@ -58,7 +58,7 @@ func (d *HappinessRatingEventDAO) GetRatings(ctx context.Context, input happines
 
 	var ratings []HappinessRatingEvent
 	if err := d.table.Get("user_id", input.UserID).AllWithContext(ctx, &ratings); err != nil {
-		return nil, fmt.Errorf("error getting all ratings for user %v: %w", input.UserID, err)
+		return nil, fmt.Errorf("error getting all ratings for user %+v: %w", input.UserID, err)
 	}
 
 	// convert results

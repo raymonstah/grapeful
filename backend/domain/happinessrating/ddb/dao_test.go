@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/guregu/dynamo"
 	"github.com/raymonstah/grapeful/domain/happinessrating"
@@ -22,6 +23,7 @@ const (
 
 func withDAO(t *testing.T, do func(ctx context.Context, dao *HappinessRatingEventDAO)) {
 	s := session.Must(session.NewSession(aws.NewConfig().
+		WithCredentials(credentials.NewStaticCredentials("","","")).
 		WithRegion("us-west-2").
 		WithEndpoint("http://localhost:8000")))
 	db := dynamo.New(s)
