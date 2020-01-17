@@ -7,21 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Set up Go 1.13
-      uses: actions/setup-go@v1
-      with:
-        go-version: 1.13
-      id: go
+      - name: Set up Go 1.13
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+        id: go
 
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v1
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
 
-    - name: Lint project
-      run: build/go-lint.sh
+      - name: Lint project
+        run: build/go-lint.sh
 
-    - name: Test app
-      run: build/go-test.sh
+      - name: Test app
+        run: build/go-test.sh
 
     services:
+      # smh https://github.community/t5/GitHub-Actions/Github-Actions-services-not-reachable/td-p/30050
       dynamodb:
         image: amazon/dynamodb-local:latest
+        options: --workdir /home/dynamodblocal
+        ports:
+          - 8000:8000
