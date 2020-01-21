@@ -19,7 +19,7 @@ jobs:
       - name: Lint project
         run: build/go-lint.sh
 
-      - name: Test app
+      - name: Test project
         run: build/go-test.sh
 
     services:
