@@ -1,8 +1,11 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
 Parameters:
+  # The name of the bucket where all the lambdas are, if any
+  LambdaBucket:
+    Type: String
   # Lambdas Zip version below
-  SampleZip:
+  SampleFuncZip:
     Type: String
 
 Resources:
