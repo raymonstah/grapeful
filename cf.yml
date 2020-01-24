@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
 Parameters:
-  # The name of the bucket where all the lambdas are, if any
+  # The name of the bucket where all the lambdas are, if any.. this gets injected from the pipeline tool
   LambdaBucket:
     Type: String
   # Lambdas Zip version below
