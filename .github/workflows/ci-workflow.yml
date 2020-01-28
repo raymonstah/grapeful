@@ -25,6 +25,10 @@ jobs:
       - name: Build lambdas
         run: build/zip.sh
 
+      - name: Install pipeline
+        run: go get -u github.com/raymonstah/aws-pipeline
+
+
     services:
       # smh https://github.community/t5/GitHub-Actions/Github-Actions-services-not-reachable/td-p/30050
       dynamodb:
