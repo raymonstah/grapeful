@@ -28,6 +28,14 @@ jobs:
       - name: Install pipeline
         run: go get -u github.com/raymonstah/aws-pipeline
 
+      - name: Upload Lambdas
+        run: aws-pipeline lambda --bucket $BUCKET --target-path $LAMBDA_DIRECTORY
+        env:
+          BUCKET: grapefulLambdas
+          LAMBDA_DIRECTORY: target/
+          AWS_ACCESS_KEY_ID: ${{ AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ AWS_SECRET_ACCESS_KEY }}
+
 
     services:
       # smh https://github.community/t5/GitHub-Actions/Github-Actions-services-not-reachable/td-p/30050
