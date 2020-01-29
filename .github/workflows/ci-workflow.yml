@@ -32,7 +32,7 @@ jobs:
           go get -u github.com/raymonstah/aws-pipeline
           aws-pipeline lambda --bucket $BUCKET --target-path $LAMBDA_DIRECTORY
         env:
-          BUCKET: grapefulLambdas
+          BUCKET: grapeful-lambdas
           LAMBDA_DIRECTORY: target/
           AWS_REGION: us-west-2
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
