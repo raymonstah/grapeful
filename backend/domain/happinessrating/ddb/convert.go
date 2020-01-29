@@ -1,6 +1,7 @@
 package ddb
 
-import "github.com/raymonstah/grapeful/domain/happinessrating"
+import 	"github.com/raymonstah/grapeful/backend/domain/happinessrating"
+
 
 
 // Convert from the DAO event to the aggregate

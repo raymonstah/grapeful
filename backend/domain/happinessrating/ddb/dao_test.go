@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/guregu/dynamo"
-	"github.com/raymonstah/grapeful/domain/happinessrating"
+	"github.com/raymonstah/grapeful/backend/domain/happinessrating"
 	"github.com/segmentio/ksuid"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/go-playground/validator.v9"

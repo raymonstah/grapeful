@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/guregu/dynamo"
-	"github.com/raymonstah/grapeful/domain/happinessrating"
+	"github.com/raymonstah/grapeful/backend/domain/happinessrating"
 	"gopkg.in/go-playground/validator.v9"
 	"time"
 )

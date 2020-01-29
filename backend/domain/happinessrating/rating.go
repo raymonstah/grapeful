@@ -20,8 +20,8 @@ type RateInput struct {
 	Notes  string
 }
 
-// Commands allows one to rate their happiness
-type Commands interface {
+// Mutator allows one to rate their happiness
+type Mutator interface {
 	Rate(ctx context.Context, rating RateInput) error
 }
 
@@ -30,7 +30,7 @@ type GetRatingsInput struct {
 	UserID string `validate:"required"`
 }
 
-// Queries are the possible queries one can perform on ratings
-type Queries interface {
+// Finder are the possible queries one can perform on ratings
+type Finder interface {
 	GetRatings(ctx context.Context, input GetRatingsInput) ([]HappinessRating, error)
 }
